@@ -72,7 +72,9 @@
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "useBatch": false
+        }
       }
     },
     "resources": {
@@ -88,8 +90,8 @@
         "viewType": "XML",
         "async": true,
         "viewPath": "z99.gerenciarparceiros.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
+        "controlId": "fcl",
+        "transition": "slide",
         "clearControlAggregation": false
       },
       "routes": [
@@ -107,7 +109,8 @@
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "ListaParceiros",
-          "viewName": "ListaParceiros"
+          "viewName": "ListaParceiros",
+          "controlAggregation": "beginColumnPages"
         }
       }
     },
