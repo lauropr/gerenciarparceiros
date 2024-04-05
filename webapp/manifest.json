@@ -86,7 +86,7 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
+        "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
         "async": true,
         "viewPath": "z99.gerenciarparceiros.view",
@@ -101,6 +101,14 @@
           "target": [
             "TargetListaParceiros"
           ]
+        },
+        {
+          "name": "RouteDetalheParceiro",
+          "pattern": "{PartnerId}",
+          "target": [
+            "TargetListaParceiros",
+            "TargetDetalheParceiro"
+          ]
         }
       ],
       "targets": {
@@ -111,6 +119,14 @@
           "viewId": "ListaParceiros",
           "viewName": "ListaParceiros",
           "controlAggregation": "beginColumnPages"
+        },
+        "TargetDetalheParceiro": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DetalheParceiro",
+          "viewName": "DetalheParceiro",
+          "controlAggregation": "midColumnPages"
         }
       }
     },

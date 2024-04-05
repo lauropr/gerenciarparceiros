@@ -24,8 +24,10 @@ sap.ui.define([
 
                 //realiza a navegação
                 let oRoteador = this.getOwnerComponent().getRouter();
-                oRoteador.navTo("");
 
+                oRoteador.navTo("RouteDetalheParceiro", {
+                    PartnerId: IdDoParceiro
+                });
             }
         });
     });

@@ -1,0 +1,50 @@
+<mvc:View controllerName="z99.gerenciarparceiros.controller.DetalheParceiro"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+   	xmlns:f="sap.ui.layout.form">
+    <Page id="page">
+
+		<f:SimpleForm id="SimpleFormDisplay354"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="{i18n>info}"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Nome 1" />
+				<Text text="{PartnerName1}" />
+				<Label text="Nome 2" />
+				<Text text="{PartnerName2}" />
+				<Label text="Termo Pesquisa 1" />
+				<Text text="{SearchTerm1}" />
+				<Label text="Termo Pesquisa 2" />
+				<Text text="{SearchTerm2}" />
+				<Label text="Rua" />
+				<Text text="{Street}" />
+				<Label text="Numero" />
+				<Text text="{HouseNumber}" />
+				<Label text="Bairro" />
+				<Text text="{District}" />
+				<Label text="Cidade" />
+				<Text text="{City}" />
+				<Label text="Estado" />
+				<Text text="{Region}" />
+				<Label text="CEP" />
+				<Text text="{ZipCode}" />
+				<Label text="País" />
+				<Text text="{Country}" />
+			</f:content>
+		</f:SimpleForm>
+    </Page>
+</mvc:View>

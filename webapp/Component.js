@@ -28,6 +28,8 @@ sap.ui.define([
                 // enable routing
                 this.getRouter().initialize();
 
+                this.getRouter().attachBeforeRouteMatched(this.aoNavegar, this);
+
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
 
@@ -41,9 +43,32 @@ sap.ui.define([
                 //associa o modelo no Component.js com o nome layout
                 this.setModel(oModeloLayout, "layout");
 
+            },
 
+            aoNavegar: function(oEvent){
+                //resgata o nome da rota
+                let sNomeDaRota = oEvent.getParameters().name;
+                
+                //guarda o valor do layout
+                let sLayout;
 
+                switch(sNomeDaRota){
+                    //quando for a rota principal, mostrar apenas a lista
+                    case "RouteListaParceiros":
+                        sLayout = "OneColumn";
+                        break;
+                    // quando for a rota de detalhe de um parceiro, dividir a tela em duas e expandir o meio
+                    case "RouteDetalheParceiro":
+                        sLayout = "TwoColumnsMidExpanded"
+                        break;
+                }
+
+                //resgatar o modelo de layout
+                let oModeloLayout = this.getModel("layout");
+                //altera a propriedade modoDeExibicao para mudar o visual (binding está no app.view.xml)
+                oModeloLayout.setProperty("/modoDeExibicao", sLayout);
             }
+
         });
     }
 );
