@@ -35,14 +35,21 @@ sap.ui.define([
 
                 //cria modelo de Layout para o Flexible Column Layout
                 let oModeloLayout = new JSONModel();
-
                 //cria uma propriedade que está vinculada na App.view.xml e associa o valor OneColumn
                 //para iniciar o app com apenas uma coluna visível
                 oModeloLayout.setProperty("/modoDeExibicao", "OneColumn");
-
                 //associa o modelo no Component.js com o nome layout
                 this.setModel(oModeloLayout, "layout");
 
+                //cria o modelo de modo de exibição e uma nova propriedade editavel com o valor falso.
+                //A propriedade será vinculada à propriedade "editable" do sap.m.Input
+                let oModeloModo = new JSONModel();
+                oModeloModo.setProperty("/editavel", false);
+
+                //associa o modelo no component.js com o nome modo
+                this.setModel(oModeloModo, "modo");
+
+                this.getModel().setDefaultBindingMode("TwoWay");
             },
 
             aoNavegar: function(oEvent){
