@@ -68,6 +68,10 @@ sap.ui.define([
                     case "RouteDetalheParceiro":
                         sLayout = "TwoColumnsMidExpanded"
                         break;
+                    // quando for a rota de detalhe de um parceiro, dividir a tela em duas e expandir o meio
+                    case "RouteNovoParceiro":
+                        sLayout = "OneColumn"
+                        break;
                 }
 
                 //resgatar o modelo de layout

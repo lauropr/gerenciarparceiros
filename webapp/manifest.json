@@ -104,10 +104,17 @@
         },
         {
           "name": "RouteDetalheParceiro",
-          "pattern": "{PartnerId}",
+          "pattern": "parceiro/{PartnerId}",
           "target": [
             "TargetListaParceiros",
             "TargetDetalheParceiro"
+          ]
+        },
+        {
+          "name": "RouteNovoParceiro",
+          "pattern": "parceiro/novo",
+          "target": [
+            "TargetNovoParceiro"
           ]
         }
       ],
@@ -123,10 +130,18 @@
         "TargetDetalheParceiro": {
           "viewType": "XML",
           "transition": "slide",
-          "clearControlAggregation": false,
+          "clearControlAggregation": true,
           "viewId": "DetalheParceiro",
           "viewName": "DetalheParceiro",
           "controlAggregation": "midColumnPages"
+        },
+        "TargetNovoParceiro": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,
+          "viewId": "NovoParceiro",
+          "viewName": "NovoParceiro",
+          "controlAggregation": "beginColumnPages"
         }
       }
     },

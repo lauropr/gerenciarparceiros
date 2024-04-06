@@ -7,6 +7,15 @@
             growing="true"
             growingThreshold="20"
             itemPress="aoSelecionarParceiro">
+
+            <headerToolbar>
+                <OverflowToolbar>
+                    <ToolbarSpacer />
+                    <Button icon="sap-icon://add" press="aoCriarParceiro" />
+                </OverflowToolbar>            
+            </headerToolbar>
+
+
             <StandardListItem title="{PartnerName1}"
                               description="{PartnerId}"
                               type="Navigation" />
