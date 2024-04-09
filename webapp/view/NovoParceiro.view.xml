@@ -1,7 +1,8 @@
 <mvc:View controllerName="z99.gerenciarparceiros.controller.NovoParceiro"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
-   	xmlns:f="sap.ui.layout.form">
+   	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
     <Page id="page">
         <!-- agregação content (default, portanto omitida) -->
         <f:SimpleForm id="SimpleFormDisplay354"
@@ -22,6 +23,13 @@
 			columnsM="1"
 			singleContainerFullSize="false" >
 			<f:content>
+
+				<Label text="Categoria" />
+				<Select items="{novoParceiro>/categorias}" change="aoEscolherCategoria">
+					<core:Item key="{novoParceiro>PartnerType}" text="{novoParceiro>Texto}" />					
+				</Select>
+
+
 				<Label text="Nome 1" />
 				<Input value="{novoParceiro>/PartnerName1}" />
                 <Label text="Nome 2" />
@@ -51,11 +59,9 @@
         <footer>
             <OverflowToolbar>
                 <ToolbarSpacer />
-                	<Button id="botaoSalvar" text="{i18n>salvar}" type="Emphasized" press="aoSalvar"
-        	            visible="false" />
+                	<Button id="botaoSalvar" text="{i18n>salvar}" type="Emphasized" press="aoSalvar"/>
 
-	                <Button id="botaoCancelar" text="{i18n>cancelar}" type="Reject" press="aoCancelar"
-    	                visible="false" />
+	                <Button id="botaoCancelar" text="{i18n>cancelar}" type="Reject" press="aoCancelar"/>
             </OverflowToolbar>            
         </footer>
 
