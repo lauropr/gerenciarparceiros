@@ -26,9 +26,12 @@ sap.ui.define([
             aoCancelar: function(){
                 //limpa o modelo de novos dados
                 let oModeloNovoParceiro = this.getOwnerComponent().getModel("novoParceiro");
-                
+
                 //passa o caminho raiz com o "/" com um objeto vazio para efetuar a limpeza
-                oModeloNovoParceiro.setProperty("/", {});
+                // oModeloNovoParceiro.setProperty("/", {});
+                //recarrega o arquivo como conteúdo do modelo json
+                oModeloNovoParceiro.loadData('./model/novoParceiro.json');
+
 
                 let oRoteador = this.getOwnerComponent().getRouter();
                 oRoteador.navTo("RouteListaParceiros");

@@ -109,7 +109,7 @@
       "routes": [
         {
           "name": "RouteListaParceiros",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": [
             "TargetListaParceiros"
           ]
