@@ -1,10 +1,12 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller, Filter, FilterOperator) {
         "use strict";
 
         return Controller.extend("z99.gerenciarparceiros.controller.ListaParceiros", {
@@ -36,7 +38,29 @@ sap.ui.define([
 
                 //navega para a rota de criação
                 oRoteador.navTo("RouteNovoParceiro");
-            }
+            },
 
+            aoPesquisarParceiro: function(oEvent){
+
+                //resgata a string de pesquisa
+                let sPesquisa = oEvent.getParameters().query;
+
+                //resgata a Lista
+                let oLista = this.getView().byId("listaParceiros");
+
+                //acessa o objeto de binding da lista
+                let oBinding = oLista.getBinding("items");
+
+                let aFilters = [];
+                aFilters.push( new Filter({
+                    path: "PartnerId",
+                    operator: FilterOperator.Contains,
+                    value1: sPesquisa,
+                    and: false
+                }));
+
+                //efetua a pesquisa
+                oBinding.filter(aFilters);
+            }
         });
     });

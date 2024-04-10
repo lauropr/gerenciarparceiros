@@ -2,7 +2,8 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <List items="{/Parceiros}"
+        <List id="listaParceiros"
+            items="{/Parceiros}"
             mode="SingleSelectMaster"
             growing="true"
             growingThreshold="20"
@@ -10,6 +11,7 @@
 
             <headerToolbar>
                 <OverflowToolbar>
+                    <SearchField width="50%" search="aoPesquisarParceiro" />
                     <ToolbarSpacer />
                     <Button icon="sap-icon://add" press="aoCriarParceiro" />
                 </OverflowToolbar>            
